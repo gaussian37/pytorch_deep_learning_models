@@ -1,1 +1,0 @@
-recursive-include imgaug *.py *.jpg *.gif *.ttf
