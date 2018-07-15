@@ -1,1 +1,0 @@
-## Organize the various Optimization method ##
