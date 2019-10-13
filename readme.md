@@ -1,4 +1,16 @@
-### Deep Learning 관련 내용 정리 ###
+## **Table**
 
-- Pytorch
-- Keras
+<br>
+
+- ### network
+	- mobilenet_v1
+	- mobilenet_v2
+	- squeezenet
+	- squeezenext
+	- shufflenet
+	- efficientnet
+- ### gan
+	- vanilla_gan
+	- dcgan	 
+- ### vae
+  
