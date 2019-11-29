@@ -6,13 +6,18 @@
 
 <br>
 
-- ### base network architecture
-	- [mobilenet_v1](https://github.com/gaussian37/Deep-Learning-Implementation/tree/master/mobilenet_v1)
-	- mobilenet_v2
-	- [squeezenet](https://github.com/gaussian37/Deep-Learning-Implementation/tree/master/squeezenet)
-	- squeezenext
-	- shufflenet
-	- efficientnet
+- ## **base network architecture**
+
+<br>
+
+- [mobilenet_v1](https://github.com/gaussian37/Deep-Learning-Implementation/tree/master/mobilenet_v1)
+- mobilenet_v2
+- [squeezenet](https://github.com/gaussian37/Deep-Learning-Implementation/tree/master/squeezenet)
+- squeezenext
+- shufflenet
+- efficientnet
+- [resnet](https://github.com/gaussian37/Deep-Learning-Implementation/blob/master/resnet_with_bottleneck)
+
 
 <br>
 
