@@ -1,3 +1,7 @@
+'''
+https://gaussian37.github.io/dl-concept-resnet/
+'''
+
 def conv_block_1(in_dim, out_dim, act_fn, stride = 1):
     """  bottleneck 구조를 만들기 위한 1x1 convolution """
     model = nn.Sequential(
