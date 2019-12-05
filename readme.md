@@ -16,7 +16,7 @@
 - squeezenext
 - shufflenet
 - efficientnet
-- [resnet](https://github.com/gaussian37/Deep-Learning-Implementation/blob/master/resnet_with_bottleneck)
+- [resnet](https://github.com/gaussian37/Deep-Learning-Implementation/blob/master/resnet)
 
 
 <br>
