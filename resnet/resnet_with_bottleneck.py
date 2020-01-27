@@ -105,6 +105,6 @@ class ResNet(nn.Module):
         out = self.layer_4(out)
         out = self.layer_5(out)
         out = self.avgpool(out)
-        out = out.view(batch_size, -1)
+        out = out.view(out.size(0), -1)
         out = self.fc_layer(out)
         return out
