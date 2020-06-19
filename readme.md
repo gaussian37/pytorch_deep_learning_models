@@ -1,7 +1,13 @@
-### All codes are written by Python + `Pytorch`.
-### All codes include only core parts (e.g. model only) for simplicity.
-### All models MUST have input parameter 'n_classes' to specify the number of output classes and reject others. Others should be defined  with default values. 
-### Accordingly, all models should be able to declared in this form. e.g. "model(n_classes=10)"
+<br>
+
+## **Repository related rules**
+
+<br>
+
+- All codes are written by Python + `Pytorch`.
+- All codes include only core parts (e.g. model only) for simplicity.
+- All models MUST have input parameter 'n_classes' to specify the number of output classes and reject others. Others should be defined  with default values. 
+- Accordingly, all models should be able to declared in this form. e.g. "model(n_classes=10)"
 
 <br>
 
