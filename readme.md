@@ -29,6 +29,7 @@
     - resnet with bottleneck
 	- dilated residual network
 - [inception](https://github.com/gaussian37/Deep-Learning-Implementation/blob/master/inception)
+- [densenet]()
 
 
 <br>
@@ -37,11 +38,16 @@
 
 <br>
 
-## **gan**
+## **Generative Adversarial Networks**
+
+<br>
+
 - vanilla_gan
 - dcgan	
 
 <br>
  
-### **vae**
+### **Variational Autoencoder**
+
+<br>
   
