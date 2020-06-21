@@ -19,6 +19,7 @@
 
 <br>
 
+- [depthwise seperable](https://github.com/gaussian37/Deep-Learning-Implementation/tree/master/depthwise_separable)
 - [mobilenet_v1](https://github.com/gaussian37/Deep-Learning-Implementation/tree/master/mobilenet_v1)
 - [mobilenet_v2](https://github.com/gaussian37/Deep-Learning-Implementation/tree/master/mobilenet_v2)
 - [squeezenet](https://github.com/gaussian37/Deep-Learning-Implementation/tree/master/squeezenet)
@@ -35,6 +36,10 @@
 <br>
 
 ## **Semantic Segmentaion**
+
+<br>
+
+- [aspp(atrous spatial pyramid pooling)]()
 
 <br>
 
