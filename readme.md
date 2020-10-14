@@ -40,6 +40,7 @@
 <br>
 
 - [aspp(atrous spatial pyramid pooling)]()
+- [pspnet]()
 
 <br>
 
