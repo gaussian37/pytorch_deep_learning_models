@@ -19,17 +19,17 @@
 
 <br>
 
-- [depthwise seperable](https://github.com/gaussian37/Deep-Learning-Implementation/tree/master/depthwise_separable)
-- [mobilenet_v1](https://github.com/gaussian37/Deep-Learning-Implementation/tree/master/mobilenet_v1)
-- [mobilenet_v2](https://github.com/gaussian37/Deep-Learning-Implementation/tree/master/mobilenet_v2)
-- [squeezenet](https://github.com/gaussian37/Deep-Learning-Implementation/tree/master/squeezenet)
+- [depthwise seperable](https://github.com/gaussian37/pytorch_deep_learning_models/tree/master/depthwise_separable)
+- [mobilenet_v1](https://github.com/gaussian37/pytorch_deep_learning_models/tree/master/mobilenet_v1)
+- [mobilenet_v2](https://github.com/gaussian37/pytorch_deep_learning_models/tree/master/mobilenet_v2)
+- [squeezenet](https://github.com/gaussian37/pytorch_deep_learning_models/tree/master/squeezenet)
 - squeezenext
 - shufflenet
 - efficientnet
-- [resnet](https://github.com/gaussian37/Deep-Learning-Implementation/blob/master/resnet)
+- [resnet](https://github.com/gaussian37/pytorch_deep_learning_models/blob/master/resnet)
     - resnet with bottleneck
 	- dilated residual network
-- [inception](https://github.com/gaussian37/Deep-Learning-Implementation/blob/master/inception)
+- [inception](https://github.com/gaussian37/pytorch_deep_learning_models/blob/master/inception)
 - [densenet]()
 
 
@@ -39,8 +39,9 @@
 
 <br>
 
-- [aspp(atrous spatial pyramid pooling)]()
-- [pspnet]()
+- [aspp](https://github.com/gaussian37/pytorch_deep_learning_models/blob/master/aspp)
+- [pspnet](https://github.com/gaussian37/pytorch_deep_learning_models/blob/master/pspnet)
+- [deeplab v3+](https://github.com/gaussian37/pytorch_deep_learning_models/blob/master/deeplab_v3_plus)
 
 <br>
 
