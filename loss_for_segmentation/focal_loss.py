@@ -1,5 +1,3 @@
-# All description : https://gaussian37.github.io/dl-concept-focal_loss/
-
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -12,6 +10,7 @@ def label_to_one_hot_label(
     device: Optional[torch.device] = None,
     dtype: Optional[torch.dtype] = None,
     eps: float = 1e-6,
+    ignore_index=255,
 ) -> torch.Tensor:
     r"""Convert an integer label x-D tensor to a one-hot (x+1)-D tensor.
 
@@ -42,17 +41,22 @@ def label_to_one_hot_label(
 
     """
     shape = labels.shape
-    # one hot : (B, C=num_classes, H, W)
-    one_hot = torch.zeros((shape[0], num_classes) + shape[1:], device=device, dtype=dtype)
+    # one hot : (B, C=ignore_index+1, H, W)
+    one_hot = torch.zeros((shape[0], ignore_index+1) + shape[1:], device=device, dtype=dtype)
     
     # labels : (B, H, W)
     # labels.unsqueeze(1) : (B, C=1, H, W)
+    # one_hot : (B, C=ignore_index+1, H, W)
+    one_hot = one_hot.scatter_(1, labels.unsqueeze(1), 1.0) + eps
+    
     # ret : (B, C=num_classes, H, W)
-    ret = one_hot.scatter_(1, labels.unsqueeze(1), 1.0) + eps    
+    ret = torch.split(one_hot, [num_classes, ignore_index+1-num_classes], dim=1)[0]
+    
     return ret
 
+
 # https://github.com/zhezh/focalloss/blob/master/focalloss.py
-def focal_loss(input, target, alpha, gamma, reduction, eps):
+def focal_loss(input, target, alpha, gamma, reduction, eps, ignore_index):
     
     r"""Criterion that computes Focal loss.
 
@@ -127,7 +131,7 @@ def focal_loss(input, target, alpha, gamma, reduction, eps):
     
     # create the labels one hot tensor
     # target_one_hot : (B, C, H, W)
-    target_one_hot = label_to_one_hot_label(target.long(), num_classes=input.shape[1], device=input.device, dtype=input.dtype)
+    target_one_hot = label_to_one_hot_label(target.long(), num_classes=input.shape[1], device=input.device, dtype=input.dtype, ignore_index=ignore_index)
 
     # compute the actual focal loss
     weight = torch.pow(1.0 - input_soft, gamma)
@@ -135,6 +139,7 @@ def focal_loss(input, target, alpha, gamma, reduction, eps):
     # alpha, weight, input_soft : (B, C, H, W)
     # focal : (B, C, H, W)
     focal = -alpha * weight * torch.log(input_soft)
+    
     # loss_tmp : (B, H, W)
     loss_tmp = torch.sum(target_one_hot * focal, dim=1)
 
@@ -189,12 +194,13 @@ class FocalLoss(nn.Module):
         >>> output.backward()
     """
 
-    def __init__(self, alpha, gamma = 2.0, reduction = 'mean', eps = 1e-8):
+    def __init__(self, alpha, gamma = 2.0, reduction = 'mean', eps = 1e-8, ignore_index=30):
         super().__init__()
         self.alpha = alpha
         self.gamma = gamma
         self.reduction = reduction
         self.eps = eps
+        self.ignore_index = ignore_index
 
     def forward(self, input, target):
-        return focal_loss(input, target, self.alpha, self.gamma, self.reduction, self.eps)
+        return focal_loss(input, target, self.alpha, self.gamma, self.reduction, self.eps, self.ignore_index)
