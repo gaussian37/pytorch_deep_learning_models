@@ -127,7 +127,7 @@ def focal_loss(input, target, alpha, gamma, reduction, eps):
     
     # create the labels one hot tensor
     # target_one_hot : (B, C, H, W)
-    target_one_hot = label_to_one_hot_label(target, num_classes=input.shape[1], device=input.device, dtype=input.dtype)
+    target_one_hot = label_to_one_hot_label(target.long(), num_classes=input.shape[1], device=input.device, dtype=input.dtype)
 
     # compute the actual focal loss
     weight = torch.pow(1.0 - input_soft, gamma)
